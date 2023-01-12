@@ -46,6 +46,7 @@ calcExpr x = [x | x <- [x^2/2 | x <- x], x > 10]
 
 -- Atividade 13
 trSpaces :: String -> String
+trSpaces x = [if x == ' ' then '-' else x | x <- x]
 
 -- Atividade 14
 selectSnd :: [(Int,Int)] -> [Int]
