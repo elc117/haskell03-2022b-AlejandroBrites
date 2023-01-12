@@ -39,6 +39,7 @@ selectExpr x = [x | x <- x, x > 20 && x < 50 && x `mod` 2 == 0]
 
 -- Atividade 11
 countShorts :: [String] -> Int
+countShorts x = length [x | x <- [ x | x <- x, length x < 10]]
 
 -- Atividade 12
 calcExpr :: [Float] -> [Float]
@@ -53,5 +54,5 @@ selectSnd :: [(Int,Int)] -> [Int]
 selectSnd x = [x | x <- [snd x | x <- x]]
 
 -- Atividade 15
-dotProd :: [Int] -> [Int] -> Int
+dotProd :: [Int] -> [Int] -> Int*********************
 dotProd x y = [zip x | x <- [snd x | x <- x, y <-y]]
