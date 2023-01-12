@@ -27,11 +27,18 @@ selectgt5 :: [Int] -> [Int]
 selectgt5 x = [x | x <- x, x > 5]
 
 -- Atividade 8
-sumOdds :: [Int] -> Int***********************************
-sumOdds x = foldr1 x <- [x | x <- x, x `mod` 2 /= 0]
+soma:: Int -> Int
+soma x y = x + y
+
+sumOdds :: [Int] -> Int
+sumOdds x = foldr1 soma [x | x <- x, mod x 2 /= 0]
 
 -- Atividade 9
-sumOdds' :: [Int] -> Int*****************************************************
+soma:: Int -> Int
+soma x y = x + y
+
+sumOdds' :: [Int] -> Int
+sumOdds x = foldr1 soma (filter (\x -> mod x 2 /= 0) x)
 
 -- Atividade 10
 selectExpr :: [Int] -> [Int]
@@ -54,5 +61,8 @@ selectSnd :: [(Int,Int)] -> [Int]
 selectSnd x = [x | x <- [snd x | x <- x]]
 
 -- Atividade 15
-dotProd :: [Int] -> [Int] -> Int*********************
-dotProd x y = [zip x | x <- [snd x | x <- x, y <-y]]
+soma:: Int -> Int
+soma x y = x + y
+
+dotProd :: [Int] -> [Int] -> Int
+dotProd x y = foldr1 soma [fst x * snd x | x <- zip x y]
